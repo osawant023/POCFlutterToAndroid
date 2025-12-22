@@ -1,13 +1,13 @@
 package com.example.pocfluttertoandroid
 
 import android.os.Bundle
-import android.widget.Toast
+import android.view.ViewGroup
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updateLayoutParams
 import com.example.pocfluttertoandroid.databinding.ActivityMainBinding
-import com.google.android.material.snackbar.Snackbar
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.embedding.engine.FlutterEngineCache
@@ -27,13 +27,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater, null,false)
+        setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+            val windowInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.updateLayoutParams<ViewGroup.MarginLayoutParams> {
+                topMargin = windowInsets.top
+            }
+            WindowInsetsCompat.CONSUMED
         }
-        setContentView(binding.main)
 
         setUpFlutterEngine()
         onClickListeners()
@@ -50,8 +52,8 @@ class MainActivity : AppCompatActivity() {
             )
 
             val data: MutableMap<String?, Any?> = HashMap()
-            data.put("platFormName", "Android Native")
-            data.put("userId", "42")
+            data["platFormName"] = "Android Native"
+            data["userId"] = "42"
             mSenderChannel.invokeMethod("initialScreen" , data)
 
             startActivity(

@@ -54,8 +54,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    debugImplementation(libs.flutter.remote.debug)
-    releaseImplementation(libs.flutter.remote.release)
-    // debugImplementation (libs.flutter.local.debug)
-    // releaseImplementation (libs.flutter.local.release)
+    debugImplementation(libs.flutter.local.debug)
+    releaseImplementation(libs.flutter.local.release)
 }

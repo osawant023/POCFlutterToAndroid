@@ -11,9 +11,11 @@
         android:id="@+id/txtLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Native Screen"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center"
+        android:text="This is a native Android app that demonstrates
+how a Flutter module can be used as library via distributed AAR."
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnNavigate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,23 +24,23 @@
         android:id="@+id/btnNavigate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:text="Navigate to Flutter"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtLabel" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
         android:text=""
         android:textSize="12sp"
-        android:layout_marginHorizontal="30dp"
-        app:layout_constraintVertical_bias="0.3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnNavigate" />
+        app:layout_constraintTop_toBottomOf="@id/btnNavigate"
+        app:layout_constraintVertical_bias="0.3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
