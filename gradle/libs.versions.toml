@@ -9,8 +9,7 @@ appcompat = "1.7.1"
 material = "1.13.0"
 activity = "1.12.1"
 constraintlayout = "2.2.1"
-flutter_remote_module = "1.0.1"
-flutter_local_module = "1.0"
+flutter_remote_module = "1.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -23,9 +22,6 @@ androidx-activity = { group = "androidx.activity", name = "activity", version.re
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 flutter_remote_debug = { module = "com.example.flutter_module:flutter_debug", version.ref = "flutter_remote_module" }
 flutter_remote_release = { module = "com.example.flutter_module:flutter_release", version.ref = "flutter_remote_module" }
-
-flutter_local_debug = { module = "com.example.flutter_module:flutter_debug", version.ref = "flutter_local_module" }
-flutter_local_release = { module = "com.example.flutter_module:flutter_release", version.ref = "flutter_local_module" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

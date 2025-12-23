@@ -17,11 +17,6 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-
-        ndk {
-            // Filter for architectures supported by Flutter
-            abiFilters += listOf("armeabi-v7a", "arm64-v8a", "x86_64")
-        }
     }
 
     buildTypes {
@@ -54,6 +49,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    debugImplementation(libs.flutter.local.debug)
-    releaseImplementation(libs.flutter.local.release)
+    debugImplementation(libs.flutter.remote.debug)
+    releaseImplementation(libs.flutter.remote.release)
 }

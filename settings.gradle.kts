@@ -12,19 +12,12 @@ pluginManagement {
     }
 }
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
         maven("https://storage.googleapis.com/download.flutter.io")
-
-        //Below for with AAR file
-        maven {
-            url = uri("app/libs/repo")
-        }
-
-        //Below with remote hosted flutter module
-        //maven("https://raw.githubusercontent.com/dhaiyurpatel/flutter_module/main/docs")
+        maven("https://raw.githubusercontent.com/dhaiyurpatel/flutter_module/v1.0.2/docs/")
     }
 
 }
